@@ -37,6 +37,15 @@ public class UserService {
         Random random = new Random();
         return String.valueOf(100000 + random.nextInt(900000)); // Generate OTP
     }
+    public boolean deleteUserByUsername(String username) {
+        User user = userRepository.findByUsername(username);
+        if (user != null) {
+            userRepository.delete(user); // Delete the user
+            return true; // User found and deleted
+        }
+        return false; // User not found
+    }
+    
 
     // Additional methods for OTP sending and validation can be added
 }
