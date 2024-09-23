@@ -30,7 +30,7 @@ public class UserController {
     public ResponseEntity<String> loginUser(@RequestBody User user) {
         try {
             userService.loginUser(user.getUsername(), user.getPassword());
-            return ResponseEntity.ok("Login successful!"); // Return 200 OK
+            return ResponseEntity.ok("Login successful!");
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials"); // Return 401 Unauthorized
         }
