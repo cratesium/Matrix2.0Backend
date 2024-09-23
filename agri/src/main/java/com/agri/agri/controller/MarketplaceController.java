@@ -21,13 +21,13 @@ public class MarketplaceController {
         return ResponseEntity.ok(createdEntry);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/get-All")
     public ResponseEntity<List<Marketplace>> getAllEntries() {
         List<Marketplace> entries = marketplaceService.getAllEntries();
         return ResponseEntity.ok(entries);
     }
 
-    @GetMapping("getById/{id}")
+    @GetMapping("get-By-Id/{id}")
     public ResponseEntity<Marketplace> getEntryById(@PathVariable String id) {
         Marketplace entry = marketplaceService.getEntryById(id);
         if (entry != null) {
